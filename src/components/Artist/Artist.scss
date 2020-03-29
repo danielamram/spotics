@@ -1,0 +1,67 @@
+@import "../../styles/variables.scss";
+
+.artist-history__item {
+  padding: 1em 0.75em;
+  text-align: left;
+  font-size: 1.1em;
+  margin: 0 -1em;
+  display: flex;
+  align-items: center;
+  color: $dark-grey;
+
+  &:hover {
+    background: $light-grey;
+  }
+
+  transform: translate3d(0, -4px, 0);
+  opacity: 0;
+  animation-name: mic-drop;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+
+  @for $i from 1 through $animation-max-items {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * (100ms - ($i * 2ms)) + $animation-initial-delay;
+    }
+  }
+}
+.artist__summary {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.artist_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.artist__name {
+  color: $dark-grey;
+  font-weight: bold;
+}
+
+.order-number {
+  color: $mid-grey;
+  font-size: 0.85em;
+}
+
+.artist__genres {
+  color: $mid-grey;
+  text-align: left;
+  font-size: 0.7em;
+  text-transform: capitalize;
+}
+
+@media (min-width: $breakpoint-small) {
+  .artist-history__item {
+    padding: 1em 1.5em;
+    margin: 0 -1.8em;
+  }
+
+  .artist__name {
+    font-weight: 500;
+  }
+}

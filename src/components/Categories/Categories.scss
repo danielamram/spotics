@@ -1,0 +1,26 @@
+.categories_ctr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .category {
+    min-width: 165px;
+    width: 255px;
+    min-height: 165px;
+    max-height: 2555px;
+    margin: 0 16px;
+    flex: 1;
+    background: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.4));
+    cursor: pointer;
+
+    .category_title {
+      font-size: 24px;
+      padding: 16px;
+      line-height: 1.3em;
+      letter-spacing: -0.04em;
+      overflow-wrap: break-word;
+      position: absolute;
+    }
+  }
+}
